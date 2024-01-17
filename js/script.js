@@ -1,65 +1,64 @@
-function criarproduct(nome, preco, imagem) {
-  var div = document.createElement('div');
+let productsTech = [
+  { name: 'Smartphone', price: 999.99, image: 'https://source.unsplash.com/featured/250x200?smarthphone' },
+  { name: 'PC Gamer', price: 2499.99, image: 'https://source.unsplash.com/featured/250x200?computer' },
+  { name: 'Fone de Ouvido Bluetooth', price: 149.99, image: 'https://source.unsplash.com/featured/250x200?headphone' },
+  { name: 'Mouse', price: 49.99, image: 'https://source.unsplash.com/featured/250x200?mouse' },
+  { name: 'Teclado', price: 79.99, image: 'https://source.unsplash.com/featured/250x200?keyboard' },
+  { name: 'Joystick', price: 69.99, image: 'https://source.unsplash.com/featured/250x200?joystick' },
+  { name: 'PS4', price: 299.99, image: 'https://source.unsplash.com/featured/250x200?PS4' },
+  { name: 'Relógio', price: 129.99, image: 'https://source.unsplash.com/featured/250x200?relogio' }
+];
+
+function createProductTags(name, price, image) {
+  let div = document.createElement('div');
   div.className = 'flex flex-col items-center justify-center bg-white p-6 shadow-xl rounded-md text-center';
 
-  var titulo = document.createElement('h1');
-  titulo.className = 'text-gray-800 text-md font-bold mt-2';
-  titulo.textContent = nome;
+  let title = document.createElement('h1');
+  title.className = 'text-gray-800 text-md font-bold mt-2';
+  title.textContent = name;
 
-  var precoElement = document.createElement('p');
-  precoElement.className = 'text-gray-500 text-md';
-  precoElement.textContent = '$' + preco;
+  let priceElement = document.createElement('p');
+  priceElement.className = 'text-gray-500 text-md';
+  priceElement.textContent = '$' + price;
 
-  var imagemElement = document.createElement('img');
-  imagemElement.src = imagem;
-  imagemElement.className = 'rounded-md border-2 border-gray-100 p-1 rounded-md shadow-lg';
+  let imageElement = document.createElement('img');
+  imageElement.src = image;
+  imageElement.className = 'rounded-md border-2 border-gray-100 p-1 rounded-md shadow-lg';
 
-  var botao = document.createElement('button');
-  botao.className = 'bg-blue-800 text-sm text-white px-4 py-2 m-1 rounded-md shadow-lg hover:bg-blue-700';
-  botao.textContent = 'COMPRAR';
+  let button = document.createElement('button');
+  button.className = 'bg-blue-800 text-sm text-white px-4 py-2 m-1 rounded-md shadow-lg hover:bg-blue-700';
+  button.textContent = 'COMPRAR';
 
-  div.appendChild(imagemElement);
-  div.appendChild(titulo);
-  div.appendChild(precoElement);
-  div.appendChild(botao);
+  div.appendChild(imageElement);
+  div.appendChild(title);
+  div.appendChild(priceElement);
+  div.appendChild(button);
 
 
   return div;
 }
 
-var productsTech = [
-  { nome: 'Smartphone', preco: 699.99, imagem: 'https://source.unsplash.com/featured/250x200?smarthphone' },
-  { nome: 'PC Gamer', preco: 1499.99, imagem: 'https://source.unsplash.com/featured/250x200?computer' },
-  { nome: 'Fone de Ouvido Bluetooth', preco: 129.99, imagem: 'https://source.unsplash.com/featured/250x200?headphone' },
-  { nome: 'Mouse', preco: 129.99, imagem: 'https://source.unsplash.com/featured/250x200?mouse' },
-  { nome: 'Teclado', preco: 129.99, imagem: 'https://source.unsplash.com/featured/250x200?keyboard' },
-  { nome: 'Joystick', preco: 129.99, imagem: 'https://source.unsplash.com/featured/250x200?joystick' },
-  { nome: 'Ração para ovos', preco: 129.99, imagem: 'https://source.unsplash.com/featured/250x200?ração' },
-  { nome: 'Café', preco: 129.99, imagem: 'https://source.unsplash.com/featured/250x200?cafe' }
-];
-
-
 //Sort functions
 function orderProductsByPriceAsc(products) {
-  const sortedProducts = products.map((product) => product).sort((a, b) => a.preco - b.preco);
+  const sortedProducts = products.map((product) => product).sort((a, b) => a.price - b.price);
     return sortedProducts;
 }
 
 function orderProductsByPriceDesc(products) {
-  const sortedProducts = products.map((product) => product).sort((a, b) => b.preco - a.preco);
+  const sortedProducts = products.map((product) => product).sort((a, b) => b.price - a.price);
     return sortedProducts;
 }
 
 // forEach
 orderProductsByPriceDesc(productsTech).forEach((product) => {
-  var productElement = criarproduct(product.nome.toUpperCase(), product.preco, product.imagem);
+  let productElement = createProductTags(product.name.toUpperCase(), product.price, product.image);
 
   document.getElementById('products-list').appendChild(productElement);
 })
 
 // Classic For
 for(i = 0; i <= productsTech.length - 1; i++) {
-  let productElement = criarproduct(productsTech[i].nome.toUpperCase(), productsTech[i].preco, productsTech[i].imagem);
+  let productElement = createProductTags(productsTech[i].name.toUpperCase(), productsTech[i].price, productsTech[i].image);
 
   document.getElementById('products-list').appendChild(productElement);
 };
@@ -67,7 +66,7 @@ for(i = 0; i <= productsTech.length - 1; i++) {
 //While
 i = 0
 while(i <= productsTech.length - 1) {
-  let productElement = criarproduct(productsTech[i].nome.toUpperCase(), productsTech[i].preco, productsTech[i].imagem);
+  let productElement = createProductTags(productsTech[i].name.toUpperCase(), productsTech[i].price, productsTech[i].image);
   document.getElementById('products-list').appendChild(productElement);
   i++
 }
