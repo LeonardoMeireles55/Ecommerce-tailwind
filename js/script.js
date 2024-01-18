@@ -31,7 +31,7 @@ function createProductTags(name, price, image, ratingsCount) {
   imageElement.className = 'border-2 border-gray-500 p-4 rounded-md shadow-lg';
 
   let button = document.createElement('button');
-  button.className = 'bg-blue-800 text-sm text-white px-4 py-2 mt-1 rounded-md shadow-lg hover:bg-blue-500';
+  button.className = 'bg-blue-700 text-sm text-white px-4 py-2 mt-1 rounded-md shadow-lg hover:bg-blue-500';
   button.textContent = 'COMPRAR';
 
   let ratingsContainer = document.createElement('ratings');
