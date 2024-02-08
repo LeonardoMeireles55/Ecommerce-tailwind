@@ -11,7 +11,7 @@
   <title>InnoGadgetHub</title>
 </head>
 
-<body class="p-0 m-0 bg-gray-200 sm:text-md">
+<body class="p-0 m-0 bg-gray-200 dark:bg-gray-500 sm:text-md">
 
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -41,6 +41,7 @@
             class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search...">
         </div>
+        <button class="toggle-dark-mode bg-gray-900 text-white p-2 rounded">Dark Mode</button>
         <button data-collapse-toggle="navbar-search" type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-search" aria-expanded="false">
@@ -166,9 +167,9 @@
   </div>
 
   <div class="mt-4 sm:flex flex-col bg-gray-200 mt-8 m-auto p-auto cursor-pointer">
-    <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+    <div class="flex overflow-x-scroll dark:bg-gray-500 pb-10 hide-scroll-bar">
       <div class="flex flex-nowrap">
-        <div class="inline-block px-3">
+        <div class="inline-block px-3 dark:bg-gray-500">
           <div
             class="w-32 h-32 max-w-xs overflow-hidden rounded-full shadow-md bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
             <img class="" src="https://source.unsplash.com/featured/300x300?smarthphone" alt="logo">
@@ -250,8 +251,8 @@
     </div>
   </div>
 
-  <div class="py-4 mx-auto mt-1 mb-6 flex flex-col items-center justify-center text-gray-200">
-    <div id="products-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12">
+  <div class="py-4 mx-auto  mt-1 mb-6 flex flex-col items-center justify-center text-gray-200">
+    <div id="products-list" class="dark:bg-gray-500 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12">
     </div>
   </div>
 

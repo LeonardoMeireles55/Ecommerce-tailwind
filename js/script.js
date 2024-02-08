@@ -9,9 +9,25 @@ let productsTech = [
   { name: 'Relógio', price: 129.99, image: 'https://source.unsplash.com/featured/250x200?relogio', ratingsCount: 3, offPrice: 10 }
 ];
 
+
+const toggleDarkModeButton = document.querySelector('.toggle-dark-mode');
+const htmlElement = document.querySelector('html');
+const isDarkModeEnabled = localStorage.getItem('darkMode') == 'true';
+
+const toggleDarkMode = () => {
+  const darkModeActive = htmlElement.classList.toggle('dark');
+  localStorage.setItem('darkMode', darkModeActive.toString());
+};
+
+toggleDarkModeButton.addEventListener('click', toggleDarkMode);
+
+if (isDarkModeEnabled) {
+  toggleDarkMode();
+}
+
 function createProductTags(name, price, image, ratingsCount, offPrice) {
   let div = document.createElement('div');
-  div.className = 'flex flex-col items-center justify-center bg-gray-100 p-6 shadow-xl rounded-md text-center';
+  div.className = 'flex flex-col items-center dark:bg-gray-300 justify-center bg-gray-100 p-6 shadow-xl rounded-md text-center';
 
   let title = document.createElement('h1');
   title.className = 'text-gray-800 text-md font-bold mt-2';
